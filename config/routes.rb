@@ -12,13 +12,14 @@ get "/users/:id/edit", to: "users#edit", as: "edit_user"
 patch "/users/:id", to: "users#update"
 # delete "/users/:id", to: "users#destroy"
 
-#edit
-#destroy
 
 #=>sessions
-#new
+
+get "/login", to: "sessions#new"
+get "/logout", to: "sessions#destroy"
+post "/sessions", to: "sessions#create"
 #destroy
-#create
+
 
 # => cities
 #index
@@ -29,9 +30,6 @@ patch "/users/:id", to: "users#update"
 #new
 #create
 #destroy
-
-
-
 
 
 
