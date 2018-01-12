@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <title>Vagabond</title>
     <%= csrf_meta_tags %>
@@ -13,27 +13,26 @@
   </head>
 
   <body>
-    <!-- Jumbotron/header -->
-    <!-- <div class="jumbotron">
-      <h1 class="display-4">Vagabond</h1>
-      <p class="lead">It's a big, beautiful world out there. See what others think of your favorite cites.</p>
-      <hr class="my-4">
-      <p class="lead">
-        <a class="btn btn-primary btn-md" href="#" role="button">Login</a>
-        <a class="btn btn-info btn-md" href="#" role="button">Sign up</a>
-      </p>
-    </div> -->
+
     <div class="container-fluid header-hero">
       <div class="row">
         <div class="col-md-6">
           <h1 class="display-4"><%= link_to "Vagabond", root_path %></h1>
           <hr>
         </div>
-        <div class="col-md-6 login-signup">
-          <%= link_to "Login", new_user_path, class: "btn btn-primary"%>
-          <%= link_to "Sign up", new_user_path, class: "btn btn-info"%>
 
+
+        <div class="col-md-6 login-signup">
+          <% if current_user %>
+            <%= link_to "Profile", user_path(current_user), class: "btn btn-primary" %>
+            <%= link_to "Log Out", logout_path, class: "btn btn-info"%>
+          <% else %>
+            <%= link_to "Login", login_path, class: "btn btn-primary"%>
+            <%= link_to "Sign up", new_user_path, class: "btn btn-info"%>
+          <% end %>
         </div>
+
+
       </div>
       <div class="row">
         <div class="col-md-4">
@@ -44,9 +43,9 @@
 
     <!-- Possible Nav -->
     <!-- <div class="container-fluid">
-      
+
     </div> -->
-    
+
     <!-- handle flash notice/error -->
     <div class="container">
       <div class="row">
@@ -58,7 +57,7 @@
         </div>
       </div>
     </div>
-    
+
     <%= yield %>
   </body>
 </html>

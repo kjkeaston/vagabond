@@ -11,7 +11,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to user_path(@user.id) # => goes to user's profile pager AFTER account creation
+    login(@user) # logs the user in after they create an account
+    redirect_to @user # goes to user show page for logging in user
   end
 
   def show
