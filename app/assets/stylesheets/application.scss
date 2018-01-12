@@ -31,13 +31,10 @@
 
 
 /* index.html.erb --> views/home */
-.carousel-inner {
-  margin: 0 auto;
+.carousel-image {
+  margin: auto;
 }
 
-.carousel-inner > .item > img {
-    margin: 0 auto;
-}
 
 
 /* show.html.erb --> views/users */
