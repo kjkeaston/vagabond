@@ -22,6 +22,18 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
   end
 
+  def update
+    user = User.find_by_id(params[:id])
+    user.update_attributes(user_params)
+    if user.save
+      redirect_to user_path(user)
+      flash[:notice] = "Profile updated!"
+    else
+      flash[:error] = "Error saving update"
+      redirect_to edit_user_path
+    end
+  end
+
   # => private methods
   private
 
