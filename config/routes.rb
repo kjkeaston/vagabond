@@ -14,7 +14,6 @@ patch "/users/:id", to: "users#update"
 
 
 #=>sessions
-
 get "/login", to: "sessions#new"
 get "/logout", to: "sessions#destroy"
 post "/sessions", to: "sessions#create"
@@ -24,8 +23,10 @@ post "/sessions", to: "sessions#create"
 # => cities
 get "/cities/:id", to: "cities#show", as: "city"
 
+
 #=> posts
-get "posts/:id", to: "posts#show", as: "post"
+get "/posts/:id", to: "posts#show", as: "post"
+
 #new
 #create
 #destroy
