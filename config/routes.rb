@@ -22,8 +22,7 @@ post "/sessions", to: "sessions#create"
 
 
 # => cities
-#index
-#show
+get "/cities/:id", to: "cities#show", as: "city"
 
 #=> posts
 
