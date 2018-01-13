@@ -37,7 +37,7 @@ User.create ([
 City.create ([
   {
   name: "London",
-  city_image: "http://atom.mu/wp-content/uploads/2017/01/London-Expat-Explore-Xmas-2017.jpg"}
+  city_image: "http://atom.mu/wp-content/uploads/2017/01/London-Expat-Explore-Xmas-2017.jpg"
   },
   {
   name: "San Franciso",
@@ -45,12 +45,27 @@ City.create ([
   },
   {
   name: "Paris",
-  city_image: "http://www.telegraph.co.uk/content/dam/Travel/2016/August/Paris-travel-AP65117955-xlarge.jpg"})
+  city_image: "http://www.telegraph.co.uk/content/dam/Travel/2016/August/Paris-travel-AP65117955-xlarge.jpg"
+  }
   ])
 
 Post.create ([
   {
-
+  title: "Post 1"
+  content: "Post 1 Content, Post 1 Content, Post 1 Content, Post 1 Content, "
+  user_id: "1"
+  city_id: "1"
   },
-
+  {
+  title: "Post 2"
+  content: "Post 2 Content, Post 2 Content, Post 2 Content, Post 2 Content, "
+  user_id: "2"
+  city_id: "2"
+  },
+  {
+  title: "Post 3"
+  content: "Post 3 Content, Post 3 Content, Post 3 Content, Post 3 Content, "
+  user_id: "3"
+  city_id: "3"
+  },
   ])
