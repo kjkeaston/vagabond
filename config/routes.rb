@@ -25,7 +25,7 @@ post "/sessions", to: "sessions#create"
 get "/cities/:id", to: "cities#show", as: "city"
 
 #=> posts
-
+get "posts/:id", to: "posts#show", as: "post"
 #new
 #create
 #destroy
