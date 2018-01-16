@@ -29,17 +29,17 @@ cities_data = []
   cities_data << {
     id: 2,
     name: "San Francisco",
-    city_image: "image tag"
+    city_image: "san_francisco.jpg"
   }
   cities_data << {
     id: 1,
     name: "London",
-    city_image: "image tag"
+    city_image: "london.jpg"
   }
   cities_data << {
     id: 3,
     name: "Gibraltar",
-    city_image: "image tag"
+    city_image: "gibraltar2.jpeg"
   }
 cities = City.create(cities_data)
 

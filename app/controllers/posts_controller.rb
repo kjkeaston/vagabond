@@ -10,11 +10,23 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = User.find_by_id(params[:user_id])
+    @user = User.find_by_id(session[:user_id])
+    # @city = City.find_by_id(params[:city_id])
     @post = Post.new
   end
 
   def create
+    @user = User.find_by_id(session[:user_id])
+    @city = City.find_by_id(params[:city_id])
+    post = Post.create(post_params)
+    post.user = @user
+    post.city = @city
+    if post.save
+      redirect_to post_path(post)
+    else
+      flash[:error] = "Error adding post"
+      redirect_to new_post_path(params[:city_id])
+    end
   end
 
   def edit

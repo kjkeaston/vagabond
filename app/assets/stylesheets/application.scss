@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  */
  @import "bootstrap";
+ @import "cities";
 
 /* Application.html.erb --> views/layouts */
 .header-hero {
@@ -44,6 +45,11 @@
   margin-right: 145px;
 }
 
+.all-cities-button-col {
+  float: none;
+  margin: 0 auto;
+}
+
 
 
 /* show.html.erb --> views/users */
@@ -51,6 +57,7 @@
   height: 30px;
   width: 30px;
 }
+
 
 
 

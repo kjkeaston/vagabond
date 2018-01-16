@@ -24,12 +24,15 @@ resources :cities
 
 # get "/cities/:id", to: "cities#show", as: "city"
 
-
+# resources :posts
 #=> posts
 # no post index currently
 # get "/users/:user_id/posts", to: "posts#index", as: "user_posts"
-get "/users/:user_id/posts/new", to: "posts#new", as: "new_user_post"
+# get "/users/:user_id/posts/new", to: "posts#new", as: "new_user_post"
 # post "/users/:user_id/posts", to: "posts#create"
+#####
+get "/cities/:city_id/posts/new", to: "posts#new", as: "new_post"
+post "/cities/:city_id/posts", to: "posts#create", as: "posts"
 get "/posts/:id", to: "posts#show", as: "post"
 get "/posts/:id/edit", to: "posts#edit", as: "edit_post"
 patch "/posts/:id", to: "posts#update"
