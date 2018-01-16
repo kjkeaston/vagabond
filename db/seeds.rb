@@ -21,12 +21,20 @@ end
 users = User.create(users_data)
 
 def random_city
+<<<<<<< HEAD
   ["San Francisco", "London", "Paris"].sample
+=======
+  ["San Francisco", "London", "Gibraltar"].sample
+>>>>>>> master
 end
 
 # Cities
 cities_data = []
+<<<<<<< HEAD
 3.times do
+=======
+3.times do 
+>>>>>>> master
   cities_data << {
     name: random_city,
     city_image: "image tag"
@@ -34,7 +42,11 @@ cities_data = []
 end
 cities = City.create(cities_data)
 
+<<<<<<< HEAD
 # Posts
+=======
+# Posts 
+>>>>>>> master
 posts_data = []
 6.times do
   posts_data << {

@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @post = Post.find_by(params[:user_id])
   end
 
   def edit
@@ -33,6 +34,12 @@ class UsersController < ApplicationController
       flash[:error] = "Error saving update"
       redirect_to edit_user_path
     end
+  end
+
+  def destroy
+    user = User.find_by_id(params[:id])
+    user.destroy
+    redirect_to root_path
   end
 
   # => private methods
