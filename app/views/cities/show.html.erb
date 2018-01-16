@@ -1,6 +1,6 @@
 <h1>City Show</h1>
 
-<div>
+<div class="city_show">
   <h3><%= @city.name %></h3>
   <hr>
   <img src="<%= @city.city_image %>">
@@ -10,8 +10,10 @@
 <div>
   <% @city.posts.each do |cp| %>
     <li>
-      <%= cp.title %>
+      <h3><%= cp.title %></h3>
+      <br>
       <%= cp.content %>
+      <hr>
     </li>
   <% end %>
 </div>

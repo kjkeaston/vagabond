@@ -26,13 +26,32 @@ end
 
 # Cities
 cities_data = []
-3.times do
   cities_data << {
-    name: random_city,
+    id: 2,
+    name: "San Francisco",
     city_image: "image tag"
   }
-end
+  cities_data << {
+    id: 1,
+    name: "London",
+    city_image: "image tag"
+  }
+  cities_data << {
+    id: 3,
+    name: "Paris",
+    city_image: "image tag"
+  }
 cities = City.create(cities_data)
+
+# "Below for randomizing city names"
+# cities_data = []
+# 3.times do
+#   cities_data << {
+#     name: random_city,
+#     city_image: "image tag"
+#   }
+# end
+# cities = City.create(cities_data)
 
 # Posts
 posts_data = []

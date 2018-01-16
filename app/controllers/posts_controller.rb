@@ -33,22 +33,4 @@ class PostsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
-=======
-  def destroy
-    post = Post.find_by_id(params[:id])
-    post.destroy
-    redirect_to user_path(post.user_id)
-  end
-
-
-  private
-
-  def post_params
-    params.require(:post).permit(:title, :content)
-  end
-
-
-
->>>>>>> master
 end
