@@ -21,10 +21,14 @@ post "/sessions", to: "sessions#create"
 
 
 # => cities
-get "/cities/:id", to: "cities#show", as: "city"
+# get "/cities/:id", to: "cities#show", as: "city"
 
 
 #=> posts
+get "/users/:user_id/posts", to: "posts#index", as: "user_posts"
+get "/users/:user_id/posts/new", to: "posts#new", as: "new_user_post"
+post "/users/:user_id/posts", to: "posts#create"
+
 get "/posts/:id", to: "posts#show", as: "post"
 
 #new
