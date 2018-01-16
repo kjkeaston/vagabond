@@ -3,9 +3,8 @@
 
 User.destroy_all
 Post.destroy_all
-# City.destroy_all
+City.destroy_all
 
-city = ["San Francisco", "London", "Paris", "Washinton DC"]
 # Users
 users_data = []
 4.times do
@@ -14,25 +13,40 @@ users_data = []
   users_data << {
     first_name: first,
     last_name: last,
-    current_city: "San Francisco"
+    current_city: "San Francisco",
     email: "#{first[0]}_#{last}@example.com".downcase,
     password: "apple"
   }
 end
 users = User.create(users_data)
 
+def random_city
+  ["San Francisco", "London", "Gibraltar"].sample
+end
+
+# Cities
+cities_data = []
+3.times do 
+  cities_data << {
+    name: random_city,
+    city_image: "image tag"
+  }
+end
+cities = City.create(cities_data)
+
 # Posts 
 posts_data = []
 6.times do
-  posts_data << { 
-    title: city.sample,
+  posts_data << {
+    user: users.sample,
+    city: cities.sample,
+    title: "My family had a great time!",
     content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    user: users.sample
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
   }
 end
 posts = Post.create(posts_data)
