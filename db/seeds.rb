@@ -21,7 +21,7 @@ end
 users = User.create(users_data)
 
 def random_city
-  ["San Francisco", "London", "Paris"].sample
+  ["San Francisco", "London", "Gibraltar"].sample
 end
 
 # Cities
@@ -38,7 +38,7 @@ cities_data = []
   }
   cities_data << {
     id: 3,
-    name: "Paris",
+    name: "Gibraltar",
     city_image: "image tag"
   }
 cities = City.create(cities_data)
