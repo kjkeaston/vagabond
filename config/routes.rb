@@ -20,10 +20,8 @@ post "/sessions", to: "sessions#create"
 
 
 # => cities
-<<<<<<< HEAD
-resources :cities 
-=======
->>>>>>> master
+resources :cities
+
 # get "/cities/:id", to: "cities#show", as: "city"
 
 

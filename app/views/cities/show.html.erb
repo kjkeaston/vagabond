@@ -1,7 +1,17 @@
 <h1>City Show</h1>
 
-  <li>
-    <h3><%= @city.name %></h3>
-    <%= @city.city_image %>
-  </li>
+<div>
+  <h3><%= @city.name %></h3>
   <hr>
+  <img src="<%= @city.city_image %>">
+  <hr>
+</div>
+
+<div>
+  <% @city.posts.each do |cp| %>
+    <li>
+      <%= cp.title %>
+      <%= cp.content %>
+    </li>
+  <% end %>
+</div>
