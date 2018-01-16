@@ -1,5 +1,5 @@
 <div class="container">
-  <h2> Post 1 </h2>
+  <h2> <%= @post.user.first_name %>'s Post from <%= @post.city.name %> </h2>
   <hr>
   <br>
   <div class="container">
@@ -8,39 +8,20 @@
         <img class="profile-pic" src="http://websterinteriors.com/wp-content/uploads/2017/01/default_avatar-2.gif">
         <br>
         <br>
-        <p>Fix for user's F/L name</p>
-        <p>Member since: dates stuff</p>
-        <p>Current city: user's city</p>
-        <%= link_to "Back to profile", user_path, class: "btn btn-outline-info btn-sm"%>
+        <p><%= @post.user.first_name %> <%= @post.user.last_name %></p>
+        <p>Member since: <%= @post.user.created_at.month %>/<%= @post.user.created_at.year %> </p>
+        <p>Current city: <%= @post.user.current_city %> </p>
+        <%= link_to "Back to profile", user_path(@post.user_id), class: "btn btn-outline-info btn-sm"%>
       </div>
       <div class="col-md-8">
         <div class="row">
           <div class="col-md-10">
-            <h4>@post.title</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h4> <%= @post.title %> </h4>
+            <p> <%= @post.content %> </p>
           </div>
           <div class="col-md-2">
-            <%= link_to image_tag("pencil_icon.png", class: "post-icon"), edit_user_path %>
-            <%= link_to image_tag("trashcan_icon.png", class: "post-icon"), edit_user_path %>
+            <%= link_to image_tag("pencil_icon.png", class: "post-icon"), edit_post_path %>
+            <%= link_to image_tag("trashcan_icon.png", class: "post-icon"), @post, method: :delete %>
           </div>
         </div>
       </div>

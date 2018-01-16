@@ -24,8 +24,6 @@ def random_city
   ["San Francisco", "London", "Gibraltar"].sample
 end
 
-# city_list = ["San Francisco", "London", "Gibraltar"]
-
 # Cities
 cities_data = []
 3.times do 
