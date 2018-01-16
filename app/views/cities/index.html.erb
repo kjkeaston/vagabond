@@ -2,7 +2,7 @@
 
 <% @city.each do |c| %>
   <div>
-    <h3><%= c.name %></h3>
+    <h3><%= link_to "#{c.name}", city_path(c) %></h3>
     <%= c.city_image %>
   </div>
   <br>

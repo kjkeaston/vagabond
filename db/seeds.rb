@@ -21,7 +21,7 @@ end
 users = User.create(users_data)
 
 def random_city
-  ["San Francisco", "London", "Gibraltar"].sample
+  ["San Francisco", "London", "Paris"].sample
 end
 
 # Cities
