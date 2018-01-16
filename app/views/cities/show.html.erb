@@ -1,9 +1,19 @@
 <h1>City Show</h1>
 
-<% @city.each do |c| %>
-  <div>
-    <h3><%= c.name %></h3>
-    <%= c.city_image %>
-  </div>
-  <br>
-<% end %>
+<div class="city_show">
+  <h3><%= @city.name %></h3>
+  <hr>
+  <img src="<%= @city.city_image %>">
+  <hr>
+</div>
+
+<div>
+  <% @city.posts.each do |cp| %>
+    <li>
+      <h3><%= cp.title %></h3>
+      <br>
+      <%= cp.content %>
+      <hr>
+    </li>
+  <% end %>
+</div>
