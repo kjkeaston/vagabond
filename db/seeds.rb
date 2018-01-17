@@ -39,7 +39,7 @@ cities_data = []
   cities_data << {
     id: 3,
     name: "Gibraltar",
-    city_image: "gibraltar2.jpeg"
+    city_image: "gibraltar2.jpg"
   }
 cities = City.create(cities_data)
 
