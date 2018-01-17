@@ -10,7 +10,7 @@
         <br>
         <h4><strong><%= @post.user.first_name %> <%= @post.user.last_name %></strong></h4>
         <p>Current city: <%= @post.user.current_city %> </p>
-        <% if current_user ||= @post.user.id %>
+        <% if current_user %>
           <%= link_to "#{@post.user.first_name}'s profile", user_path(@post.user_id), class: "btn btn-outline-info btn-sm"%>
         <% end %>
         <%= link_to "Back to #{@post.city.name}", city_path(@post.city_id), class: "btn btn-outline-primary btn-sm"%>
