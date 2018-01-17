@@ -1,12 +1,13 @@
 <!-- View not needed currently -->
 <!-- Not showing an index of all cities -->
 
-<h1>City Index</h1>
 
-<% @city.each do |c| %>
-  <div class="city-index">
-    <h2><%= link_to "#{c.name}", city_path(c), class: "city-title" %></h2>
-    <%= image_tag(c.city_image, class: "city-image-index") %>
-  </div>
-  <br>
-<% end %>
+<div class="container">
+  <% @city.each do |c| %>
+    <div class="city_index">
+      <h2><%= link_to "#{c.name}", city_path(c), class: "city-title" %></h2>
+      <%= image_tag(c.city_image, class: "city-image-index") %>
+    </div>
+    <br>
+  <% end %>
+</div>
