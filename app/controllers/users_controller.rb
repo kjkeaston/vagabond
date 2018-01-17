@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
 
+  # before_action :require_login, only: [:edit, :update, :destroy]
+
   # => not being served currently. Keeping for future use
-  def index
-    @users = User.all
-  end
+  # def index
+  #   @users = User.all
+  # end
 
   def new
     @user = User.new
@@ -11,8 +13,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    login(@user) # logs the user in after they create an account
-    redirect_to @user # goes to user show page for logging in user
+    if @user.save
+      login(@user) # logs the user in after they create an account
+      redirect_to @user
+    else
+      flash[:error] = "Error creating account"
+      redirect_to new_user_path # goes to user show page for logging in user
+    end
   end
 
   def show
@@ -21,7 +28,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by_id(params[:id])
+      @user = User.find_by_id(params[:id])
+    #   if @current_user
+
+    # else
+    #   flash[:notice] = "You don't have permission."
+    # end
   end
 
   def update

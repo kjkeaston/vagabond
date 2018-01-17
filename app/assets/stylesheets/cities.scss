@@ -7,10 +7,20 @@
 //   text-align: center;
 // }
 //
-// .city_show img{
-//   max-width: 300px
-//   height: auto;
-// }
+.city-image-index {
+  max-width: 300px;
+  height: auto;
+}
+
+.city-image-show {
+  height: 625px;
+  width: 1000px;
+}
+
+.city-title:hover {
+  text-decoration: none
+}
+
 //
 // .city_index img {
 //   max-width: 300px

@@ -1,19 +1,21 @@
-<h1>City Show</h1>
-
-<div class="city_show">
-  <h3><%= @city.name %></h3>
+<div class="container">
+  <h2><%= @city.name %></h2>
   <hr>
-  <img src="<%= @city.city_image %>">
+  <br>
+  <%= image_tag(@city.city_image, class: "city-image-show") %>
   <hr>
+  <%= link_to "Add New Post", new_post_path(@city.id), class: "btn btn-outline-success btn-lg" %>
+  <br>
+  <br>
+  <div>
+    <% @city.posts.reverse_each do |cp| %>
+      <h3><%= link_to cp.title, cp, class: "post-title" %></h3>
+        <p><%= cp.content %>
+        <br>
+        <%= link_to "more...", cp %>
+        </p>
+    <% end %>
+    <%= link_to "Back to Cities", cities_path, class: "btn btn-outline-info btn-sm"%>
+  </div>
 </div>
-
-<div>
-  <% @city.posts.each do |cp| %>
-    <li>
-      <h3><%= cp.title %></h3>
-      <br>
-      <%= cp.content %>
-      <hr>
-    </li>
-  <% end %>
-</div>
+<br>

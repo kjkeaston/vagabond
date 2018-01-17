@@ -1,9 +1,11 @@
-<h1>City Index</h1>
+<div class="container">
+  <% @city.each do |c| %>
+    <div class="city_index">
+      <h2><%= link_to "#{c.name}", city_path(c), class: "city-title" %></h2>
+      <%= image_tag(c.city_image, class: "city-image-index") %>
+    </div>
+    <br>
+  <% end %>
+</div>
+<br>
 
-<% @city.each do |c| %>
-  <div class="city_index">
-    <h3><%= link_to "#{c.name}", city_path(c) %></h3>
-    <img src="<%= c.city_image %>">
-  </div>
-  <br>
-<% end %>

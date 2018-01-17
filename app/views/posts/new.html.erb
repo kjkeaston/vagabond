@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Edit your post for <%= @post.city.name %>, <%= @post.user.first_name %></h2>
+  <h2> <%= @user.first_name %>, add a new post for <%= @city.name %>!</h2>
   <hr>
   <br>
   <div class="container">
@@ -12,8 +12,8 @@
         <%= f.label :content, "Content" %>
         <%= f.text_area :content, placeholder: "Content", class: "form-control" %>
       </div>
-      <%= f.submit "Update", class: "btn btn-outline-primary" %>
-      <%= link_to "Cancel", post_path, class: "btn btn-outline-warning"%>
+      <%= f.submit "Add Post", class: "btn btn-outline-primary" %>
+      <%= link_to "Cancel", cities_path, class: "btn btn-outline-warning"%>
     <% end %>
   </div>
 </div>

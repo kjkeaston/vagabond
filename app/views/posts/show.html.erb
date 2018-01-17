@@ -1,5 +1,5 @@
 <div class="container">
-  <h2> <%= @post.user.first_name %>'s Post from <%= @post.city.name %> </h2>
+  <h2> <%= @post.user.first_name %>'s post from <%= @post.city.name %> </h2>
   <hr>
   <br>
   <div class="container">
@@ -8,7 +8,7 @@
         <img class="profile-pic" src="http://websterinteriors.com/wp-content/uploads/2017/01/default_avatar-2.gif">
         <br>
         <br>
-        <p><%= @post.user.first_name %> <%= @post.user.last_name %></p>
+        <h4><strong><%= @post.user.first_name %> <%= @post.user.last_name %></strong></h4>
         <p>Member since: <%= @post.user.created_at.month %>/<%= @post.user.created_at.year %> </p>
         <p>Current city: <%= @post.user.current_city %> </p>
         <%= link_to "Back to profile", user_path(@post.user_id), class: "btn btn-outline-info btn-sm"%>
@@ -16,12 +16,14 @@
       <div class="col-md-8">
         <div class="row">
           <div class="col-md-10">
-            <h4> <%= @post.title %> </h4>
+            <h3> <%= @post.title %> </h3>
             <p> <%= @post.content %> </p>
           </div>
           <div class="col-md-2">
-            <%= link_to image_tag("pencil_icon.png", class: "post-icon"), edit_post_path %>
-            <%= link_to image_tag("trashcan_icon.png", class: "post-icon"), @post, method: :delete %>
+            <% if current_user.id == @post.user.id %>
+              <%= link_to image_tag("pencil_icon.png", class: "post-icon"), edit_post_path %>
+              <%= link_to image_tag("trashcan_icon.png", class: "post-icon"), @post, method: :delete, data: {confirm: "Are you sure you want to delete your post '#{@post.title}'?"} %>
+            <% end %>
           </div>
         </div>
       </div>
