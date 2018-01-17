@@ -9,18 +9,14 @@
 
     <!-- Favicon -->
     <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon" %>
-
   </head>
 
   <body>
-
     <div class="container-fluid header-hero">
       <div class="row">
         <div class="col-md-6">
           <h1 class="display-4"><%= link_to "Vagabond", root_path, id: "title" %></h1>
         </div>
-
-
         <div class="col-md-6 login-signup">
           <% if current_user %>
             <%= link_to "Profile", user_path(current_user), class: "btn btn-primary" %>
@@ -30,16 +26,14 @@
             <%= link_to "Sign up", new_user_path, class: "btn btn-info"%>
           <% end %>
         </div>
-
       </div>
-        <div class="row">
-          <div class="col-md-4">
-            <!-- client specified content below: "For perfect family trips" -->
-            <p class="lead-text">For perfect family trips</p>
-          </div>
+      <div class="row">
+        <div class="col-md-4">
+          <!-- client specified content below: "For perfect family trips" -->
+          <p class="lead-text">For perfect family trips</p>
         </div>
+      </div>
     </div>
-
 
     <!-- handle flash notice/error -->
     <div class="container">
@@ -47,13 +41,13 @@
         <div class="col-md-6 col-md-offset-3">
           <% flash.each do |key, value| %>
             <div class="<%= flash_class(key) %>">
-                  <%= value %>
+              <%= value %>
             </div>
           <% end %>
         </div>
       </div>
     </div>
-
+    
     <%= yield %>
   </body>
 </html>
