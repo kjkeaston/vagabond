@@ -34,6 +34,7 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'sprockets-rails'
 gem 'ffaker'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

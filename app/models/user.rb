@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   has_many :posts, dependent: :destroy
   has_many :cities, through: :posts
 
@@ -14,5 +15,5 @@ class User < ApplicationRecord
   validates :current_city, presence: true
   validates :email, presence: true, format: { with: /@/, message: "must include @"}, uniqueness: true, length: {maximum: 255}
   validates :password, presence: true
-  
+
 end
