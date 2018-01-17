@@ -10,7 +10,9 @@
         <br>
         <h4><strong><%= @post.user.first_name %> <%= @post.user.last_name %></strong></h4>
         <p>Current city: <%= @post.user.current_city %> </p>
-        <%= link_to "#{@post.user.first_name}'s profile", user_path(@post.user_id), class: "btn btn-outline-info btn-sm"%>
+        <% if current_user ||= @post.user.id %>
+          <%= link_to "#{@post.user.first_name}'s profile", user_path(@post.user_id), class: "btn btn-outline-info btn-sm"%>
+        <% end %>
         <%= link_to "Back to #{@post.city.name}", city_path(@post.city_id), class: "btn btn-outline-primary btn-sm"%>
       </div>
       <div class="col-md-8">
@@ -27,8 +29,12 @@
           </div>
           <div>
             <br>
-            <br>
-            <h5>This post has <%= @post.comments.count %> Comments</h5>
+            <hr>
+            <% if @post.comments.count == 1 %>
+              <h5>This post has <%= @post.comments.count %> Comment</h5>
+            <% else %>
+              <h5>This post has <%= @post.comments.count %> Comments</h5>
+            <% end %>
             <%= render @post.comments %>
             <br>
             <h4>Add a Comment:</h4>
