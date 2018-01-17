@@ -1,8 +1,9 @@
 # Vagabond
 
-### "For perfect family trips"
+## "For perfect family trips"
 
-Simple site for users to view various reviews about cities people have visitied. User can:
+Simple site for users to view various reviews about cities people have visitied. 
+_Users can:_
 * Create profiles
 * Edit profiles
 * Delete profiles
@@ -12,7 +13,7 @@ Simple site for users to view various reviews about cities people have visitied.
 * Add comments on posts
 * Delete comments they have posted or that have been posted on their posts
 
-## Technologies used:
+### Technologies used:
 * Ruby on Rails
 * Bootstrap
 * HTML, CSS, JS
