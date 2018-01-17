@@ -20,7 +20,7 @@
             <p> <%= @post.content %> </p>
           </div>
           <div class="col-md-2">
-            <% if @current_user.id == @post.user.id %>
+            <% if @current_user == @post.user.id %>
               <%= link_to image_tag("pencil_icon.png", class: "post-icon"), edit_post_path %>
               <%= link_to image_tag("trashcan_icon.png", class: "post-icon"), @post, method: :delete, data: {confirm: "Are you sure you want to delete your post '#{@post.title}'?"} %>
             <% end %>
