@@ -1,24 +1,32 @@
-# README
+# Vagabond
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### "For perfect family trips"
 
-Things you may want to cover:
+Simple site for users to view various reviews about cities people have visitied. User can:
+* Create profiles
+* Edit profiles
+* Delete profiles
+* Add posts
+* Edit their posts
+* Delete their posts
+* Add comments on posts
+* Delete comments they have posted or that have been posted on their posts
 
-* Ruby version
+## Technologies used:
+* Ruby on Rails
+* Bootstrap
+* HTML, CSS, JS
+* Gems - ffaker, bcrypt, 
 
-* System dependencies
+### Creators:
+* Adam Menard & Kyle Easton
 
-* Configuration
+### Heroku link:
+https://still-retreat-50254.herokuapp.com/
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Setup:
+_Be sure to run the following terminal commands for initial setup:_
+* `bundle install`
+* `rails db:create`
+* `rails db:migrate`
+* `rails db:seed`
