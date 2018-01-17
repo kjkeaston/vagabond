@@ -9,9 +9,9 @@
         <br>
         <br>
         <h4><strong><%= @post.user.first_name %> <%= @post.user.last_name %></strong></h4>
-        <p>Member since: <%= @post.user.created_at.month %>/<%= @post.user.created_at.year %> </p>
         <p>Current city: <%= @post.user.current_city %> </p>
-        <%= link_to "Back to profile", user_path(@post.user_id), class: "btn btn-outline-info btn-sm"%>
+        <%= link_to "#{@post.user.first_name}'s profile", user_path(@post.user_id), class: "btn btn-outline-info btn-sm"%>
+        <%= link_to "Back to #{@post.city.name}", city_path(@post.city_id), class: "btn btn-outline-primary btn-sm"%>
       </div>
       <div class="col-md-8">
         <div class="row">

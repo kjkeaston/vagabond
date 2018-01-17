@@ -9,6 +9,7 @@ class CitiesController < ApplicationController
     @post = Post.find_by(id: post_url)
   end
 
+
   private
 
   def city_params
