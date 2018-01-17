@@ -9,10 +9,10 @@ class CitiesController < ApplicationController
     # @post = Post.find_by(id: post_url)
   end
 
-  # private
+  private
 
-  # def city_params
-  #   params.require(:city).permit(:name, :city_image)
-  # end
+  def city_params
+    params.require(:city).permit(:name, :city_image)
+  end
 
 end

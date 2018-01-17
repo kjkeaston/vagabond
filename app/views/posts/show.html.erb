@@ -20,10 +20,21 @@
             <p> <%= @post.content %> </p>
           </div>
           <div class="col-md-2">
-            <% if current_user.id == @post.user.id %>
+            <% if @current_user.id == @post.user.id %>
               <%= link_to image_tag("pencil_icon.png", class: "post-icon"), edit_post_path %>
               <%= link_to image_tag("trashcan_icon.png", class: "post-icon"), @post, method: :delete, data: {confirm: "Are you sure you want to delete your post '#{@post.title}'?"} %>
             <% end %>
+          </div>
+          <div>
+            <br>
+            <br>
+            <h5>This post has <%= @post.comments.count %> Comments</h5>
+            <%= render @post.comments %>
+            <br>
+            <h4>Add a Comment:</h4>
+            <%= render "comments/form" %>
+            <hr>
+            <br>
           </div>
         </div>
       </div>
