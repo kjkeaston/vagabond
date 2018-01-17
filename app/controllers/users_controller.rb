@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  # before_action :require_login, only: [:edit, :update, :destroy]
+
   # => not being served currently. Keeping for future use
   # def index
   #   @users = User.all
@@ -26,7 +28,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by_id(params[:id])
+      @user = User.find_by_id(params[:id])
+    #   if @current_user
+
+    # else
+    #   flash[:notice] = "You don't have permission."
+    # end
   end
 
   def update
