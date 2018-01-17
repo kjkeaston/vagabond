@@ -1,6 +1,10 @@
-<br>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <p><%= f.label :name %><%= f.text_field :name %></p>
-  <p><%= f.label :comment %><br><%= f.text_area :content %></p>
-  <p><%= f.submit %></p>
+<% if current_user %>
+  <br>
+  <%= form_for([@post, @post.comments.build]) do |f| %>
+    <p><%= f.label :name %><%= f.text_field :name %></p>
+    <p><%= f.label :comment %><br><%= f.text_area :content %></p>
+    <%= f.submit "Add Comment", :class => "btn btn-outline-success btn-sm" %>
+  <% end %>
+<% else %>
+  <h6><i>Please Log In and/or Sign up to leave a comment ☞</i></h6>
 <% end %>
