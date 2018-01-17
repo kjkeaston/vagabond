@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
   # => not being served currently. Keeping for future use
-  def index
-    @users = User.all
-  end
+  # def index
+  #   @users = User.all
+  # end
 
   def new
     @user = User.new
@@ -11,8 +11,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    login(@user) # logs the user in after they create an account
-    redirect_to @user # goes to user show page for logging in user
+    if @user.save
+      login(@user) # logs the user in after they create an account
+      redirect_to @user
+    else
+      flash[:error] = "Error creating account"
+      redirect_to new_user_path # goes to user show page for logging in user
+    end
   end
 
   def show

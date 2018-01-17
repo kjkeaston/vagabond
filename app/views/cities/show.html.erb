@@ -4,13 +4,12 @@
   <br>
   <%= image_tag(@city.city_image, class: "city-image-show") %>
   <hr>
-  <%= link_to "Add New Post", new_post_path(@city.id), class: "btn btn-outline-success btn-sm" %>
+  <%= link_to "Add New Post", new_post_path(@city.id), class: "btn btn-outline-success btn-lg" %>
   <br>
-  <!-- new_user_post_path(session[:user_id]) -->
   <br>
   <div>
-    <% @city.posts.each do |cp| %>
-      <h3><%= cp.title %></h3>
+    <% @city.posts.reverse_each do |cp| %>
+      <h3><%= link_to cp.title, cp, class: "post-title" %></h3>
         <p><%= cp.content %>
         <br>
         <%= link_to "more...", cp %>

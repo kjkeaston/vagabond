@@ -12,12 +12,18 @@
  */
  @import "bootstrap";
  @import "cities";
+ @import "home";
 
 /* Application.html.erb --> views/layouts */
 .header-hero {
   margin-bottom: 2rem;
   background-color: #e9ecef;
   border-radius: 0.3rem;
+}
+
+#title:hover {
+  text-decoration: none;
+  color: #007bff;
 }
 
 .lead-text {
@@ -31,34 +37,23 @@
 }
 
 
-/* index.html.erb --> views/home */
-.carousel-image {
-  margin: auto;
-  border-radius: 20px;
-}
-
-.carousel-control-prev-icon {
-  margin-left: 145px;
-}
-
-.carousel-control-next-icon {
-  margin-right: 145px;
-}
-
-.all-cities-button-col {
-  float: none;
-  margin: 0 auto;
-}
-
-
-
 /* show.html.erb --> views/users */
 .post-icon {
   height: 30px;
   width: 30px;
 }
 
+.post-title {
+  color: black;
+}
 
+.post-title:hover {
+  text-decoration: none;
+  color: black;
+}
 
+p {
+  font-size: 20px;
+}
 
 

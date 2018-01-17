@@ -1,3 +1,31 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.carousel-image {
+  margin: auto;
+  border-radius: 20px;
+  height: 625px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon
+ {
+  margin-left: 0px;
+  width: 30px;
+  height: 30px;
+  background-color: #050c14;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.all-cities-button-col {
+  float: none;
+  margin: 0 auto;
+}
+
+.carousel-city-name,
+.carousel-city-name:hover {
+  text-decoration: none;
+  color: white;
+}
