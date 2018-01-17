@@ -24,8 +24,9 @@ class PostsController < ApplicationController
     post.city = @city
     if post.save
       redirect_to post_path(post)
+      flash[:notice] = "Post added"
     else
-      flash[:error] = "Error adding post"
+      flash[:error] = post.errors.full_messages.join(", ")
       redirect_to new_post_path(params[:city_id])
     end
   end
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
       redirect_to post_path(post)
       flash[:notice] = "Post updated!"
     else
-      flash[:error] = "Error saving update"
+      flash[:error] = post.errors.full_messages.join(", ")
       redirect_to edit_post_path
     end
   end
@@ -50,6 +51,7 @@ class PostsController < ApplicationController
     post = Post.find_by_id(params[:id])
     post.destroy
     redirect_to user_path(post.user_id)
+    flash[:success] = "Post deleted"
   end
 
 
