@@ -10,4 +10,8 @@ class User < ApplicationRecord
     @user ? @user.authenticate(params[:password]) : false
   end
 
+  validates :first_name, presence: true, length: {maximum: 255}
+  validates :last_name, presence: true, length: {maximum: 255}
+  validates :email, presence: true, format: { with: /@/, message: "must include @"}, uniqueness: true, length: {maximum: 255}
+
 end
