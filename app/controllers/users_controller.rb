@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
-
-  # => not being served currently. Keeping for future use
-  # def index
-  #   @users = User.all
-  # end
-
+  # add before_action to authorize specific actions for specific users
+  
   def new
     @user = User.new
   end
@@ -12,12 +8,12 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      login(@user) # logs the user in after they create an account
+      login(@user)
       redirect_to @user
       flash[:success] = "Account created!"
     else
       flash[:error] = @user.errors.full_messages.join(", ")
-      redirect_to new_user_path # goes to user show page for logging in user
+      redirect_to new_user_path
     end
   end
 
@@ -46,6 +42,7 @@ class UsersController < ApplicationController
   def destroy
     user = User.find_by_id(params[:id])
     user.destroy
+    # Handle if user is not destroyed properly (flash notice)
     redirect_to root_path
     flash[:success] = "Account deleted"
   end
