@@ -21,7 +21,7 @@ Simple site for users to view various reviews about cities people have visitied.
 * Adam Menard & Kyle Easton
 
 ### Heroku link:
-https://still-retreat-50254.herokuapp.com/
+https://vagabond-travel-app.herokuapp.com/
 
 ### Setup:
 _Be sure to run the following terminal commands for initial setup:_
