@@ -1,9 +1,6 @@
 class PostsController < ApplicationController
-
-  # def index
-  #   @user = User.find_by_id(params[:user_id])
-  # end
-
+  # add before_action to authorize specific actions for specific users
+  
   def show
     @post = Post.find_by_id(params[:id])
     @user = User.find_by_id(params[:user_id])
@@ -24,7 +21,7 @@ class PostsController < ApplicationController
     post.city = @city
     if post.save
       redirect_to post_path(post)
-      flash[:notice] = "Post added"
+      flash[:notice] = "Post added!"
     else
       flash[:error] = post.errors.full_messages.join(", ")
       redirect_to new_post_path(params[:city_id])

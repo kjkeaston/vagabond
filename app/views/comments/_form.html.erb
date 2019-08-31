@@ -1,7 +1,7 @@
+<!-- Add front-end validations -->
 <% if current_user %>
   <br>
   <%= form_for([@post, @post.comments.build]) do |f| %>
-    <p><%= f.label :name %><%= f.text_field :name %></p>
     <p><%= f.label :comment %><br><%= f.text_area :content %></p>
     <%= f.submit "Add Comment", :class => "btn btn-outline-success btn-sm" %>
   <% end %>
